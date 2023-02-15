@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Select an Option: "
+select opt in "Email Recovery" "Image Recovery" ; do
+    if [ "$opt" = "Email Recovery" ]
+    then
+        ./email;
+    else
+        ./image;
+    fi;
+    break;
+done;
