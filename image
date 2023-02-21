@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if ! type foremost&>/dev/null;
+then
+    echo "foremost is not installed please install it first";
+    exit 1;
+fi;
+
+echo "Type the name of the extension of the image";
+
+read imageExtension;
+
+sudo fdisk -l;
+echo "type the appropriate drive to search";
+
+read drive;
+
+sudo rm -rf ./recovery;
+mkdir ./recovery;
+sudo foremost -t $imageExtension -i $drive -q -v -o ./recovery;
+sudo chown -R $USER:$USER ./recovery
+echo "done locating images check recovery folder now"

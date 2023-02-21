@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if ! type gmvault&>/dev/null;
+then
+    echo "gmvault is not installed please install it first";
+    exit 1;
+fi;
+
