@@ -6,3 +6,18 @@ then
     exit 1;
 fi;
 
+
+echo "this tool assumes your gmail settings have been configured to work with gmvault and that you have access to app password";
+
+echo "select what to do:";
+
+select opt in "Sync Gmail to local Backup" "Recover lost emails" ; do
+    if [ "$opt" = "Sync Gmail to local Backup" ]
+    then
+    gmvault sync -p "$email"
+    else
+    gmvault restore -p "$email"
+    fi;
+    break;
+done;
+
