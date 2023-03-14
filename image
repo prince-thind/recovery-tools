@@ -20,5 +20,5 @@ mkdir ./recovery;
 sudo foremost -t $imageExtension -i $drive -q -v -o ./recovery;
 sudo chown -R $USER:$USER ./recovery
 
-fileNumber=$(find -name $imageExtension -type f |wc -l)
+fileNumber=$(find -name *.$imageExtension -type f |wc -l)
 echo "Done recovering $fileNumber files"
